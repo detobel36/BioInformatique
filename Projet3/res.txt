@@ -1,0 +1,15 @@
+-> MUSCLE
+
+Séquence 1
+
+141 |                   150                        160                                                                    170    | 173
+      V P L P P G W E M A K   T P   S G Q   R Y F L                                                   N H I D Q T T T W Q D P
+                            -     -   +   -         - - - - - - - - - - - - - - - - - - - - - - - - -                        
+
+
+Séquence 2
+
+460 | 460                                                                                              480                    490    | 493
+      G P L P P G W E E R T H     T   D G R V F F I                                                   N H   N I K K T Q W E D P R
+                          +   - -   -               - - - - - - - - - - - - - - - - - - - - - - - - -     - +                    
+

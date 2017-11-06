@@ -1,0 +1,45 @@
+
+------------------- SCEANCE 1 -------------------
+PPSM
+
+1.
+    a) Créer une matrice d'acide aminé en fonction de la position
+
+        ____|___POSITION___
+        AA1 |
+        AA2 |
+        ... |
+        AAn |
+
+
+    b) compter les AA pour une colonne (-> n(u, b))
+
+2. fréquence d'une AA par colonne
+    u = acide aminé
+    b = position
+    \frac{n(u,b)}{#AASeq}
+
+
+3. Calculer la probabilité de trouver l'acide aminé AA dans une colonne
+    Pour chaque position (i,j) = \frac{\alpha F(i,j) + \beta p(i)}{\alpha + \beta}
+    p se calcul à partir du site: http://web.expasy.org/docs/relnotes/relstat.html
+
+4. Trouver le p(i) dans SWISSPORT/UMPROT
+
+5. Calculer m(i,j) = log \frac{q(i,j)}{p(i)}
+
+
+------------------- SCEANCE 2 -------------------
+
+s(i,j) = \sum_{aa} (PPSM(aa, i) . t(aa, seq[j]))
+
+
+
+------------------- RAPPORT -------------------
+
+1. Rapport
+2. Alignement local en adaptant l'algorithme
+3. Alignement des séquences dans les fichiers tests fasta avec le PSSM.  On veut voir le résultat avec
+*toutes les séquences*.
+4. Aller sur UNIPROT, prendre les résultats et les comparer (bien mettre la comparaison dans le rapport)
+ 
