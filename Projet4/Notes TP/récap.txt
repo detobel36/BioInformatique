@@ -1,0 +1,73 @@
+
+# Création d'un prédicteur
+
+## Parseur
+- Ouvre le fichier CATH_info
+- Pour chaque ligne, prendre le premier string sans la dernière lettre.
+- Ouvrir le fichier du même nom et sélectionner seulement les lignes de se second fichier
+    ayant un résidu égal à la lettre prise dans le premier fichier.
+- Pour chaque ligne sélectionner, on concataine les strucutres et les acides aminés (on oublie pas
+    de convertir les structures comme indiqué dans le PDF)
+
+    Fichier DSSP:
+    #  RESIDUE AA STRUCTURE BP1 BP2
+      3  105 A Y  E     -A   14   0A
+      Résidu ▲ |  |
+   Acide Aminé ▲  |
+        Structure ▲
+
+## Construction du prédicteur
+"Toute la structure" et "toute la séquence" représente les deux valeurs que l'on vient de concaténer
+
+- On compte le nombre de chaque structure dans toute la structure
+- On compte le nombre de couple (structure, aa) dans toute la structure + séquence
+- On compte le nombre de triplet (structure, aa, AADécalé).  Où, pour chaque colonne
+    structure représente la structure dans cette colonne de toute la structure
+    aa même chose mais dans toute la séquence
+    AADécalé est l'acide aminé à la position -8 à +8 (mais != 0) pour la colonne choisie
+
+    Concrètement pour toute la séquence et toute la structure suivante (ici les strucutres ont été 
+    remplacé par des chiffres pour y voir plus claire dans les calculs):
+                                          ▼
+    Structure:    A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R
+    Acide Amine:  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
+
+
+    On va donc avoir `f(Struc, AADécalé, AA)`:
+    f(I, 1, 9)
+    f(I, 2, 9)
+    f(I, 3, 9)
+    f(I, 4, 9)
+    f(I, 5, 9)
+    f(I, 6, 9)
+    f(I, 7, 9)
+    f(I, 8, 9)
+    # passe car indice 0
+    f(I, 10, 9)
+    f(I, 11, 9)
+    f(I, 12, 9)
+    f(I, 13, 9)
+    f(I, 14, 9)
+    f(I, 15, 9)
+    f(I, 16, 9)
+    f(I, 17, 9)
+
+- Lorsque l'on cherche une fréquence (que ce soit avec un paramettre, deux ou trois), il suffit
+    d'aller chercher dans les strucutres qui viennent d'être construites
+- On trouve également dans la consigne des fonctions f sous cette forme:
+    f_{n-S}
+    Pour faciliter leur écriture, nous écririrons f_n(S) ou f_n(S, R) ou encore f_n(S, RDecalé, R)
+
+
+## Calcul de la prédiction
+
+
+
+
+
+# Test
+
+## Parseur
+Exactement la même chose que pour la création du prédicteur
+
+
